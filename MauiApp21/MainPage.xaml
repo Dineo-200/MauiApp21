@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="MauiApp21.MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <!--Devide our page into two parts-->
+    <Grid RowDefinitions=".30*, .70*">
+        <Image Source="wallpaper.png" Aspect="Fill"/>
+        <Grid BackgroundColor="DeepPink" Opacity=".3"/>
+        
+        <!--Devide the 30% into two parts-->
+        <Grid ColumnDefinitions="*,*">
+            <Image Source="dotnet_bot.png" HeightRequest="90" WidthRequest="1000"/>
+            
+            <!--Animation-->
+            <skia:SKLottieView Grid.Column="1"
+                              Source="rabbit.json"/>
+
+
+        </Grid>
+        <!--using the remaing 70 part-->
+        <Grid Grid.Row="1">
+            <RoundRectangle Fill="Aqua" CornerRadius="30,30,0,0" Margin="-2,0,-2,0"/>
+
+            <VerticalStackLayout Margin="0,20,0,0">
+                <Label Text="Welcome to LDIL" HorizontalOptions="Center" FontSize="Large" TextColor="DeepPink" FontAttributes="Bold"/>
+                <Label Text="Log in to continue" HorizontalOptions="Center" FontSize="Medium" TextColor="DeepPink" FontAttributes="Bold"/>
+                
+                <!--Email-->
+                <StackLayout Orientation="Horizontal">
+                    <Border  BackgroundColor="Magenta" HeightRequest="50" WidthRequest="50" Stroke="DeepPink" StrokeThickness="2" StrokeShape="RoundRectangle 10"
+                             Margin="0,50,0,0" ZIndex="1">
+
+                        <Image Source="email.png" Margin="0,0,0,03"/>
+
+                    </Border>
+                    
+                    <Border BackgroundColor="Magenta" HeightRequest="50" Stroke="DeepPink"
+                            StrokeThickness="2" StrokeShape="RoundRectangle 10" Margin="-15,50,0,0" HorizontalOptions="FillAndExpand">
+
+                        <Entry Keyboard="Email" x:Name="EmailEntryField" Placeholder="Email Address" PlaceholderColor="Aqua" Margin="20,0,10,0"/>
+
+                    </Border>
+                    
+                </StackLayout>
+                
+                <!--Password-->
+                <StackLayout Orientation="Horizontal">
+                    <Border  BackgroundColor="Magenta" HeightRequest="50" WidthRequest="50" Stroke="DeepPink" StrokeThickness="2" StrokeShape="RoundRectangle 10"
+                             Margin="0,50,0,0" ZIndex="1">
+
+                        <Image Source="password.png" Margin="0,0,0,0" WidthRequest="40" />
+
+                    </Border>
+
+                    <Border BackgroundColor="Magenta" HeightRequest="50" Stroke="DeepPink" StrokeThickness="2" StrokeShape="RoundRectangle 10" Margin="-15,50,0,0"
+                            HorizontalOptions="FillAndExpand">
+                        
+                        <Grid ColumnDefinitions="*,Auto">
+                            <Entry IsPassword="True" x:Name="PasswordEntryField" Placeholder="Password"  Margin="20,0,10,0"/>
+
+                            <ImageButton Source="hide.png" x:Name="ShowHidePassword" HeightRequest="10" WidthRequest="10" BackgroundColor="Magenta" Aspect="AspectFill"
+                                         Grid.Column="1" Margin="0,0,10,0" Clicked="ShowHidePassword_Clicked"/>
+
+                        </Grid>
+                        
+                    </Border>
+                </StackLayout>
+                
+                <!--forget password-->
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Forget Password" BackgroundColor="Aqua" TextColor="DeepPink" FontAttributes="Bold" Margin="225,0,0,0"
+                            Clicked="Button_Clicked_2"/>
+
+                </StackLayout>
+                
+                <!--sign in-->
+                <Button Text="Sign In" WidthRequest="150" CornerRadius="10" BackgroundColor="Magenta" TextColor="Aqua" Clicked="Button_Clicked"/>
+                
+                <!--Social Media Section-->
+                <VerticalStackLayout Spacing="10" HorizontalOptions="Center" Margin="0,0,0,0">
+                    <Label Text="or sign in with" FontAttributes="Italic"/>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        
+                        <!--whatsapp-->
+                        <ImageButton Source="whatsappp.png" HeightRequest="40" WidthRequest="40"/>
+                        
+                        <!--facebook-->
+                        <ImageButton Source="facebook.png" HeightRequest="40" WidthRequest="40"/>
+                        
+                        <!--tiktok-->
+                        <ImageButton Source="tiktok.png" HeightRequest="40" WidthRequest="40"/>
+
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
+                    <Label Text="Don't have an account?" FontAttributes="Italic"/>
+                    <Button Text="Sign up here" BackgroundColor="Aqua" FontAttributes="Bold"
+                            TextColor="DeepPink" Clicked="Button_Clicked_1" Margin="0,-15,0,0"/>
+
+                </StackLayout>
+
+
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+
+</ContentPage>
