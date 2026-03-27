@@ -1,4 +1,6 @@
-﻿namespace MauiApp21
+﻿using MauiApp21.ViewModel;
+
+namespace MauiApp21
 {
     public partial class MainPage : ContentPage
     {
@@ -7,6 +9,9 @@
         public MainPage()
         {
             InitializeComponent();
+
+            //connecting our page to  the view model
+            BindingContext = new SaveClientDetails();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

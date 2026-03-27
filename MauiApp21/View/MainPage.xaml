@@ -77,7 +77,8 @@
                 </StackLayout>
                 
                 <!--sign in-->
-                <Button Text="Sign In" WidthRequest="150" CornerRadius="10" BackgroundColor="Magenta" TextColor="Aqua" Clicked="Button_Clicked"/>
+                <Button Text="Sign In" WidthRequest="150" CornerRadius="10" BackgroundColor="Magenta" TextColor="Aqua"
+                        Command="{Binding SignInCommand}"/>
                 
                 <!--Social Media Section-->
                 <VerticalStackLayout Spacing="10" HorizontalOptions="Center" Margin="0,0,0,0">
@@ -100,7 +101,7 @@
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
                     <Label Text="Don't have an account?" FontAttributes="Italic"/>
                     <Button Text="Sign up here" BackgroundColor="Aqua" FontAttributes="Bold"
-                            TextColor="DeepPink" Clicked="Button_Clicked_1" Margin="0,-15,0,0"/>
+                            TextColor="DeepPink" Command="{Binding SignupCommand}" Margin="0,-15,0,0"/>
 
                 </StackLayout>
 
