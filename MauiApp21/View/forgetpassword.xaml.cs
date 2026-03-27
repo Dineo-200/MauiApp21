@@ -6,4 +6,9 @@ public partial class forgetpassword : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void DisplayInformation_ItemTapped(object sender, ItemTappedEventArgs e)
+    {
+
+    }
 }
